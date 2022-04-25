@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: adv_works
+    schema: adv_works
+    description: Banco de dados bruto do ERP, da empresa Adventure Works
+    tables:
+      - name: person_adress
+        description: tabela de cadastro de endereço
+        columns:
+            - name: addressid
+                description: id único
+                tests:
+                - unique
+                - not null
+            - name: addressline1
+                description: logradouro
+            - name: addressline2
+                description: complemento     
+            - name: city
+                description:cidade  
+            - name: stateprovinceid
+                description: estado
+            - name: postalcode
+                description: código postal
+            - name: spatiallocation
+                description:
+            - name: rowguid
+                description: 
+            - name: modifieddate
+                description: Data da modificação
+
+        - name: person_countryregion
+            description: tabela de cadastro de pais
+            columns:
+            - name: countryregioncode
+                description: id único
+                tests:
+                - unique
+                - not null
+            - name: name
+                description: Nome do Pais
+            - name: modifieddate
+                description: Data da modificação
+                        
