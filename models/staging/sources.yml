@@ -4,7 +4,6 @@ sources:
   - name: adv_works
     schema: adv_works
     description: Banco de dados bruto do ERP, da empresa Adventure Works
-    location: US
     tables:
       - name: person_adress
         description: tabela de cadastro de endereço
