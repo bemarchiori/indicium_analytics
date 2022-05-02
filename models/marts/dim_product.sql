@@ -9,6 +9,8 @@ with
         ,productid
         ,nome
         ,num_serie
+        ,categoria
+        ,subcategoria
         from staging
     )
 

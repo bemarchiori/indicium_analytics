@@ -46,6 +46,26 @@ sources:
             description: Número de série do produto
           - name: sellstartdate
             description: Data de inicio da venda do produto
+          - name: productsubcategoryid
+            description: Chave estrangeira para a tabela product.productsubcategory
           - name: modifieddate
             description: Data de modificação do registro
+
+      - name: production_productsubcategory
+        description: Tabela de cadastro de subcategoria de produtos.
+        columns:
+          - name: productsubcategoryid
+            description: chave única da tabela.
+          - name: productcategoryid
+            description: Chave estrangeira para a tabela product.productcategory
+          - name: name
+            description: Nome da subcategoria
+  
+      - name: production_productcategory
+        description: Tabela de cadastro de categoria de produtos.
+        columns:
+          - name: productcategoryid
+            description: chave única da tabela.
+          - name: name
+            description: Nome da subcategoria
                         
