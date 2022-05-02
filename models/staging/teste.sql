@@ -1,1 +1,0 @@
-SELECT * FROM {{source('adv_works','person_address')}}

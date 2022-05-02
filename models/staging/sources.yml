@@ -34,4 +34,18 @@ sources:
             description: Nome do Pais
           - name: modifieddate
             description: Data da modificação
+
+      - name: production_product
+        description: Tabela de cadastro de produtos.
+        columns:
+          - name: productid
+            description: chave única da tabela.
+          - name: name
+            description: Nome do Produto
+          - name: productnumber
+            description: Número de série do produto
+          - name: sellstartdate
+            description: Data de inicio da venda do produto
+          - name: modifieddate
+            description: Data de modificação do registro
                         
