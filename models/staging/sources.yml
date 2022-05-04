@@ -25,6 +25,23 @@ sources:
           - name: modifieddate
             description: Data da modificação
 
+      - name: person_stateprovince
+        description: Tabela de cadastro de estados/provínciais
+        columns:
+          - name: stateprovinceid
+            description: Chave primária da tabela.
+          - name: stateprovincecode
+            description: Sigla do estado.
+          - name: countryregioncode
+            description: Sigla do pais, utilizado como FK para a batela person_countryregion.
+          - name: isonlystateprovinceflag
+          - name: name
+            description: Nome do Estado/Província.
+          - name: territoryid
+            description: FK para a tabela sales.SalesTerritory.
+          - name: rowguid
+          - name: modifieddate
+          
       - name: person_countryregion
         description: tabela de cadastro de pais
         columns:
@@ -68,4 +85,24 @@ sources:
             description: chave única da tabela.
           - name: name
             description: Nome da subcategoria
-                        
+
+      - name: person_person
+        description: Tabela de cadastro de dados de pessoas.
+        columns:
+          - name: businessentityid
+            description: Chave primaria da tabela faz referencia a tabela BusinessEntity.
+          - name: persontype
+            description: Tipo de Pessoa.
+          - name: namestyle
+          - name: title
+          - name: firstname
+            description: Primeiro nome da Pessoa.
+          - name: middlename
+          - name: lastname
+            description: Sobrenome da pessoa.
+          - name: suffix
+          - name: emailpromotion
+          - name: additionalcontactinfo
+          - name: demographics
+          - name: rowguid
+          - name: modifieddate
