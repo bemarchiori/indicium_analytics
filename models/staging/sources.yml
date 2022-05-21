@@ -183,5 +183,91 @@ sources:
           - name: name
             description: Motivo da venda.
           - name: reasontype
-            description: Tipificação,agrupador de motivo .
+            description: Tipificação/agrupador de motivo.
+          - name: modifieddate
+
+      - name: sales_personcreditcard
+        description: Tabela relacional entre o cadastro de pessoa(person.person) e o cadastro de cartão de credito(sales.creditcard).
+        columns:
+          - name: businessentityid
+            description: Foreign key com a tabela de pessoa(person.person).
+          - name: creditcardid
+            description: Foregin key com a tabela de cadastro de cartão de credito(sales.creditcard)
+          - name: modifieddate
+
+      - name: sales_creditcard
+        description: Tabela de cadastro de cartões de credito.
+        columns:
+          - name: creditcardid
+            description: Chave primária da tabela.
+          - name: cardtype
+            description: Bandeira do cartão de crédito.
+          - name: cardnumber
+            description: Número do Cartão.
+          - name: expmonth
+            description: Mês de vencimento do cartão, campo inteiro.
+          - name: expyear
+            description: Ano de vencimento do cartão, campo inteiro.
+          - name: modifieddate
+
+      - name: sales_salesterritory
+        description: Tabela de cadastro de território de vendas.
+        columns:
+          - name: territoryid
+            description: Chave Primária da tabela.
+          - name: name
+            description: nome do território.
+          - name: countryregioncode
+            description: País.
+          - name: group
+          - name: salesytd
+            description: Vendas no território no ano atual.
+          - name: saleslastyear
+            description: Vendas totais no ano passado.
+          - name: costytd
+            description: Custo total até o ano corrente.
+          - name: costlastyear
+            description: Custo total ano passado.
+          - name: rowguid
+          - name: modifieddate
+
+      - name: sales_salesperson
+        description: Tabela de cadastro de vendedores.
+        columns:
+          - name: businessentityid
+            description: Chave primária da tabela, faz referencia a tabela person.businessentity.
+          - name: territoryid
+            description: Foreign key para a tabela sales.salesterritory.
+          - name: salesquota
+          - name: bonus
+          - name: commissionpct
+          - name: salesytd
+          - name: saleslastyear
+          - name: rowguid
+          - name: modifieddate
+
+      - name: sales_store
+        description: Tabela de cadastro de lojas.
+        columns:
+          - name: businessentityid
+            description: Chave primária da tabela, faz referencia a tabela person.businessentity.
+          - name: name
+          - name: salespersonid
+            description: Foreign key para a tabela sales.salesperson.
+          - name: demographics
+          - name: rowguid
+          - name: modifieddate
+
+      - name: sales_customer
+        description: Tabela relacional entre pessoa e loja ou vendedor.
+        columns:
+          - name: customerid
+            description: Chave primária da tabela.
+          - name: personid
+            description: Foreign Key relacionada com o campo businessentity da tabela person.person.
+          - name: storeid
+            description: Foreign Key relacionada com o campo businessentity da sales.store.
+          - name: territoryid
+            description: Foreign Key relacionada com tabela sales.salesterritory.
+          - name: rowguid
           - name: modifieddate
