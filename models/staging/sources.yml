@@ -106,3 +106,82 @@ sources:
           - name: demographics
           - name: rowguid
           - name: modifieddate
+
+      - name: sales_salesorderheader
+        description: Tabela de cadastro de pedidos de venda
+        columns:
+          - name: salesorderid
+            description: Chave primaria da tabela
+          - name: revisionnumber
+          - name: orderdate
+          - name: duedate
+          - name: shipdate
+          - name: status
+          - name: onlineorderflag
+          - name: purchaseordernumber
+          - name: accountnumber
+          - name: customerid
+            description: Foreign key para a tabela sales.customer.
+          - name: salespersonid
+            description: Foreing key para a tabela sales.salesperson.
+          - name: territoryid
+            description: Foreing key para a tabela sales.salesterritory.
+          - name: billtoaddressid
+            description: Foreing key para a tabela person.adress, aponta o endereço de cobrança.
+          - name: shiptoaddressid
+            description: Foreing key para a tabela person.adress, aponta o endereço de envio do pedido.
+          - name: shipmethodid
+            description: Foreing key para a tabela purchasing.shipmethod.
+          - name: creditcardid
+            description: Foreing key para a tabela sales.creditcard.
+          - name: creditcardapprovalcode
+          - name: currencyrateid
+            description: Foreing key para a tabela sales.currencyrate
+          - name: subtotal
+          - name: taxamt
+          - name: freight
+          - name: totaldue
+          - name: comment
+          - name: rowguid
+          - name: modifieddate
+
+      - name: sales_salesorderdetail
+        description: Tabela de cadastro dos detalhes dos pedidos
+        columns:
+          - name: salesorderid
+            description: Foreign key para a tabela sales.salesoderheader.
+          - name: salesorderdetailid
+            description: Primary key da tabela.
+          - name: carriertrackingnumber
+          - name: orderqty
+            description: Quantidade de itens da ordem.
+          - name: productid
+            description: Foreign key para a tabela production.product
+          - name: specialofferid
+            description: Foreign key para a tabela sales.specialofferproduct.
+          - name: unitprice
+            description: Preço unitário do produto
+          - name: unitpricediscount
+            description: Desconto dado ao produto.
+          - name: rowguid
+          - name: modifieddate
+
+      - name: sales_salesorderheadersalesreason
+        description: Tabela relacional entre tabela sales.salesorderheader e sales.salesreason.
+        columns:
+          - name: salesorderid
+            description: Foreign key da tabela sales.salesorderheader.
+          - name: salesreasonid
+            description: Foreign key da tabela sales.salesreason.
+          - name: modifieddate
+
+      - name: sales_salesreason
+        description: Tabela de cadastro de motivos de venda.
+        columns:
+          - name: salesreasonid
+            description: Chave primaria da tabela.
+          - name: name
+            description: Motivo da venda.
+          - name: reasontype
+            description: Tipificação,agrupador de motivo .
+          - name: modifieddate
