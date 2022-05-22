@@ -10,6 +10,7 @@ transformed as (
     ,s.middlename
     ,s.lastname
     ,s.firstname||' '||coalesce(s.middlename,'')||' '||coalesce(s.lastname,'') as full_name
+    ,s.persontype as tipo
 
     from stage s
 )
