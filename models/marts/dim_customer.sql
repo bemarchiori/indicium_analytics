@@ -22,7 +22,7 @@ dim_salesterritory as (
     ,d.territory_name
     ,d.countryregioncode
     ,d.group
-    from {{ref('dim_salesterritory')}} d
+    from {{ref('dim_sales_territory')}} d
 ),
 stage_customer as (
     select 
