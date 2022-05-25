@@ -21,7 +21,9 @@ dim_customer as (
     from {{ref('dim_customer')}} d
 ),
 dim_address as (
-   select 1
+   select d.address_sk as customer_fk
+    ,d.address_id
+    from {{ref('dim_address')}} d
 
 )
 select * from dim_address

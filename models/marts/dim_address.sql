@@ -5,7 +5,7 @@ with stage as (
 ),
 transformed as (
     select 
-    row_number() over(order by s.addressid) as adress_sk
+    row_number() over(order by s.addressid) as address_sk
     ,s.addressline1
     ,s.addressline2
     ,s.city
