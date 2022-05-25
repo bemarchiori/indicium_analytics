@@ -22,7 +22,7 @@ dim_customer as (
 ),
 dim_address as (
    select d.address_sk as customer_fk
-    ,d.address_id
+    ,d.addressid
     from {{ref('dim_address')}} d
 
 )
