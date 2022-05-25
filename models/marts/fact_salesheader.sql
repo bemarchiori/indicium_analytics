@@ -1,8 +1,4 @@
-with 
-
-
-
-,stage_sales_order_header as (
+with stage_sales_order_header as (
     select
     s.salesorderid
     ,s.orderdate
@@ -18,6 +14,14 @@ with
     ,s.taxamt
     ,s.freight
     from {{ref('stg_salesorderheader')}} s
-)
+),
+dim_customer as (
+    select d.customer_sk as customer_fk
+    ,d.customerid
+    from {{ref('dim_customer')}} d
+),
+dim_address as (
+   select 1
 
-select * from stage_sales_order_header
+)
+select * from dim_address

@@ -14,4 +14,4 @@ with stage as (
     from stage s
 )
 
-select * from stage
+select * from transformed
