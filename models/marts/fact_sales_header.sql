@@ -52,6 +52,7 @@ transformed as (
     ,sales_territory.sales_territory_fk
     ,bill.address_fk as bill_address_fk
     ,ship.address_fk as ship_address_fk
+    ,reason.sales_reason_fk
     ,credit.creditcard_fk
     ,orderdate
     ,duedate
