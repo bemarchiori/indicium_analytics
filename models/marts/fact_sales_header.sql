@@ -29,13 +29,6 @@ dim_sales_territory as (
     ,d.territoryid
     from {{ref('dim_sales_territory')}} d
 ),
-dim_sales_reason as (
-    select 
-    d.sales_reason_sk as sales_reason_fk
-    ,d.salesorderid
-    from {{ref('dim_sales_reason')}} d
-
-),
 dim_sales_person as (
     select 
     d.sales_person_sk as sales_person_fk
