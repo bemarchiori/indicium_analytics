@@ -24,7 +24,7 @@ with stage as (
     ,totaldue
     --,comment
     --,rowguid
-    modifieddate
+    --,modifieddate
     from {{source('adv_works','sales_salesorderheader')}}
 )
 

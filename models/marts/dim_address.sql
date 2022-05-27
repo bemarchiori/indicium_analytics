@@ -11,6 +11,7 @@ transformed as (
     ,s.addressline2
     ,s.city
     ,s.stateprovincecode
+	,s.stateprovince
     ,s.countryregioncode
     ,s.country
     from stage s

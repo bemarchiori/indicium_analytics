@@ -30,7 +30,7 @@ with stg_countryregion as (
 		,s.countryregioncode 
 		,s.country
 		,a.postalcode 
-		--,a.spatiallocation 
+		,a.spatiallocation 
 		--,a.rowguid 
 		--,a.modifieddate 
 		from {{source('adv_works','person_address')}} a
