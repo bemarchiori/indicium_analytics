@@ -17,7 +17,7 @@ stg_salesorderdetail as (
 ),
 fact_sales_reason as (
     select 
-    row_number() over (order by sr.salesorderid) as fact_order_sk
+    row_number() over (order by sr.salesorderid) as sales_reason_sk
     ,d.salesorderdetailid as sales_order_detail_fk
     ,r.sales_reason_sk as sales_reason_fk
     from stg_salesheader_reason sr
